@@ -1,0 +1,27 @@
+<div class="content">
+    <form class="canv">
+        <h1 [style.font-family]="FontMitsu">Edit preview</h1>
+        <h3 [style.font-family]="FontMitsu">Choose the form of Mitsubishi's preview</h3>
+        <canvas id="canvas" #option></canvas>
+        <br>
+        <button class="draw" (click)="drawCircle()" (click)="SetPrewiev(option)" [style.font-family]="FontMitsu">Draw circle</button>
+        <button class="draw" (click)="drawTriangle()" (click)="SetPrewiev(option)" [style.font-family]="FontMitsu">Draw triangle</button>
+        <button class="draw" (click)="drawSquare()" (click)="SetPrewiev(option)" [style.font-family]="FontMitsu">Draw square</button>
+        <br>              
+    </form>  
+        <div class="text">
+            <textarea id="text" [style.font-family]="FontMitsu" #mitsu>{{TextMitsu}}</textarea>
+        </div>
+        <div class="fonts">
+                <p [style.font-family]="FontMitsu">The font-family is <strong style="text-transform:uppercase">{{FontMitsu}}</strong></p>
+                <Select #fn>
+                    <option selected hidden>Choose here</option>
+                    <option  value="Roboto">Roboto</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="Arial">Arial</option>
+                </Select>
+                <button class="btn-set" (click)="SetFont(fn)">Set font</button>
+            </div>
+    <a routerLink="/" class="btn" (click)="Cancel()"><span [style.font-family]="FontMitsu">Cancel</span></a>
+    <a routerLink="/" class="btn" (click)="SendMitsu(mitsu)"><span [style.font-family]="FontMitsu">Save</span></a>
+</div>

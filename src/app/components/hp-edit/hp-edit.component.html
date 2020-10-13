@@ -1,0 +1,28 @@
+<div class="content">
+        <form class="canv">
+            <h1 [style.font-family]="FontHp">Edit preview</h1>
+            <h3 [style.font-family]="FontHp">Choose the form of HP's preview</h3>
+            <canvas id="canvas" #option></canvas>
+            <br>
+            <button class="draw" (click)="drawCircle()" (click)="SetPrewiev(option)" [style.font-family]="FontHp">Draw circle</button>
+            <button class="draw" (click)="drawTriangle()" (click)="SetPrewiev(option)" [style.font-family]="FontHp">Draw triangle</button>
+            <button class="draw" (click)="drawSquare()" (click)="SetPrewiev(option)" [style.font-family]="FontHp">Draw square</button>
+            <br>
+        </form>
+        <div class="text">
+                <textarea id="text" [style.font-family]="FontHp" #hp>{{TextHP}}</textarea>
+        </div>
+        <div class="fonts">
+                <p [style.font-family]="FontHp">The font-family is <strong style="text-transform:uppercase">{{FontHp}}</strong></p>
+                <Select #fn>
+                        <option selected hidden>Choose here</option>
+                        <option  value="Roboto">Roboto</option>
+                        <option value="Helvetica">Helvetica</option>
+                        <option value="Arial">Arial</option>
+                </Select>
+                <button class="btn-set" (click)="SetFont(fn)">Set font</button>
+        </div>
+        <a routerLink="/" class="btn"><span [style.font-family]="FontHp" (click)="Cancel()">Cancel</span></a>
+        <a routerLink="/" class="btn" (click)="SendHP(hp)"><span [style.font-family]="FontHp">Save</span></a>
+            
+</div>
